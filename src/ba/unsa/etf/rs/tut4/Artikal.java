@@ -18,21 +18,21 @@ public class Artikal {
         }
     }
 
-    public Artikal(String abc, String proizvod, int i) {
+    public Artikal(String abc, String proizvod, double i) {
         setSifra(abc);
         setNaziv(proizvod);
         setCijena(i);
     }
 
-    public static void izbaciDuplikate(ArrayList<Artikal> lista) {
-    }
+   /* public static void izbaciDuplikate(ArrayList<Artikal> lista) {
+    }*/
 
     public String getSifra() {
         return sifra;
     }
 
     public void setSifra(String sifra) {
-        if(sifra.isEmpty()) throw new IllegalArgumentException("Sifra je prazna");
+        if(sifra.isEmpty()) throw new IllegalArgumentException("Šifra je prazna");
         this.sifra = sifra;
     }
 
@@ -53,4 +53,19 @@ public class Artikal {
         if(cijena<0) throw new IllegalArgumentException("Cijena je negativna");
         this.cijena = cijena;
     }
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Artikal artikal = (Artikal) o;
+
+        if (Double.compare(artikal.cijena, cijena) != 0) return false;
+        if (sifra != null ? !sifra.equals(artikal.sifra) : artikal.sifra != null) return false;
+        return naziv != null ? naziv.equals(artikal.naziv) : artikal.naziv == null;
+    }
+
+
+
+
 }
