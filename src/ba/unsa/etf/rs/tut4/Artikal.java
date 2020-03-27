@@ -18,7 +18,7 @@ public class Artikal {
         }
     }
 
-    public Artikal(String abc, String proizvod, double i) {
+    public Artikal(String abc, String proizvod, double   i) {
         setSifra(abc);
         setNaziv(proizvod);
         setCijena(i);

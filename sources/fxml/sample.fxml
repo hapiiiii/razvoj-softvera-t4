@@ -1,24 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.net.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
 <TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ba.unsa.etf.rs.tut4.Controller">
+
+    <stylesheets>
+        <URL value="@/css/stile.css" />
+    </stylesheets>
   <tabs>
-    <Tab text="Racun">
-      <content>
-        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-      </content>
-    </Tab>
-    <Tab text="Artikli">
-      <content>
-        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+      <Tab text="Artikli" fx:id="a" >
+          <content >
+              <AnchorPane fx:id="art" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                  <children>
+                      <TextArea fx:id="ulaz" layoutX="7.0" layoutY="6.0" prefHeight="163.0" prefWidth="200.0" />
+                      <TextArea fx:id="izlaz" layoutX="7.0" layoutY="180.0" prefHeight="177.0" prefWidth="200.0" />
+                      <Button layoutX="248.0" layoutY="75.0" mnemonicParsing="false" onAction="#ok" text="Dodaj Artikle" />
+                  </children></AnchorPane>
+          </content>
+      </Tab>
+    <Tab text="Racun"  fx:id="r">
+      <content >
+        <AnchorPane fx:id="rac" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                <children>
-                  <TextArea layoutX="7.0" layoutY="6.0" prefHeight="163.0" prefWidth="200.0" />
-                  <TextArea layoutX="7.0" layoutY="180.0" prefHeight="177.0" prefWidth="200.0" />
-                  <Button layoutX="248.0" layoutY="75.0" mnemonicParsing="false" text="Dodaj Artikle" />
+                  <ChoiceBox fx:id="izaberi" layoutX="178.0" layoutY="37.0" prefWidth="150.0" />
+                  <Spinner id="kilicina" layoutX="179.0" layoutY="109.0" max="30" min="1" />
+                  <Button id="dodaj" layoutX="408.0" layoutY="109.0" mnemonicParsing="false" text="Dodaj" />
+                  <TextArea fx:id="" layoutX="154.0" layoutY="174.0" prefHeight="173.0" prefWidth="207.0" />
+                  <Label layoutX="54.0" layoutY="41.0" text="Artikal" />
+                  <Label layoutX="54.0" layoutY="113.0" text="Kolicina" />
+                  <Label layoutX="54.0" layoutY="177.0" text="Aktuelni racun" />
                </children></AnchorPane>
       </content>
     </Tab>
+
   </tabs>
 </TabPane>
