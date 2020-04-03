@@ -13,10 +13,10 @@ class RacunTest {
         r.dodajStavku(new Artikal("JAJ", "Jaje", 0.25), 5);
         assertEquals(3.45, r.ukupanIznos());
     }
-
+*/
     @Test
     void testPrazno() {
         Racun r = new Racun();
         assertEquals(0, r.ukupanIznos());
-    }*/
+    }
 }
