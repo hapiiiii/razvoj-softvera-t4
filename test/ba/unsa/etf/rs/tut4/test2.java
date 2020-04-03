@@ -28,6 +28,8 @@ public class test2 {
         robot.lookup("#dodaj").queryButton();
         robot.lookup("#ulaz").queryTextInputControl();
         robot.lookup("#izlaz").queryTextInputControl(); }
+
+
     @Test
     public void test2_2(FxRobot robot) {
         robot.clickOn("#ulaz");
@@ -36,6 +38,10 @@ public class test2 {
         TextArea textArea = (TextArea)robot.lookup("#izlaz").query();
         assertEquals("mlj1,mljeko1,2.0\n", textArea.getText());
     }
+
+
+
+
 
     @Test
     public void test2_3(FxRobot robot) {
